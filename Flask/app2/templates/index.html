@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado Personas</title>
+</head>
+<body>
+
+    <a href="{{url_for('agregar')}}" >Agregar</a>
+    <div>
+        {% for persona in personas %}
+        {{persona}} -
+        <a href="/ver/{{persona.id}}" >Ver</a> -
+        <a href="/editar/{{persona.id}}" >Editar</a> -
+        <a href="/eliminar/{{persona.id}}" >Eliminar</a>
+        <br>
+        {%endfor%}
+    </div>
+    <div>
+        Total: {{total}}
+    </div>
+</body>
+</html>
